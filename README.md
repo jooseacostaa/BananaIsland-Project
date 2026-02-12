@@ -126,7 +126,7 @@ The project follows strict naming conventions:
 - Optimized images
 - Flexbox for flexible layouts
 
-- ## 🌐 Rutas de la Aplicación
+- ## 🌐 Application Routes
 
 | Route | Component | Description |
 |------|-----------|-------------|
