@@ -1,0 +1,99 @@
+.featured {
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.featured__title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.featured__subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+.featured__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.featured__card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.featured__card:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.featured__card--1 {
+    transform: rotate(-2deg);
+}
+
+.featured__card--2 {
+    transform: rotate(3deg);
+}
+
+.featured__card--3 {
+    transform: rotate(-2deg);
+}
+
+.featured__card--4 {
+    transform: rotate(3deg);
+}
+
+.featured__card--5 {
+    transform: rotate(-2deg);
+}
+
+.featured__card--6 {
+    transform: rotate(3deg);
+}
+
+.featured__card--7 {
+    transform: rotate(-2deg);
+}
+
+.featured__card-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+.featured__card-content p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.featured__card-image img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+    .featured__cards {
+        justify-content: center;
+    }
+
+    .featured__card {
+        width: 80%;
+        transform: rotate(0deg) !important;
+    }
+}

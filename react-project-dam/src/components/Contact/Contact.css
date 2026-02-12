@@ -1,0 +1,118 @@
+.contact {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contact__header {
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+.contact__header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 0.75rem;
+}
+
+.contact__header p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.contact__container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+}
+
+.contact__form {
+    background-color: #fff;
+    padding: 2.5rem;
+
+    border: 1px solid #eaeaea;
+    border-radius: 20px;
+}
+
+.contact__field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.contact__field label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.contact__field input,
+.contact__field textarea {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+    border-color: #111;
+}
+
+.contact__btn {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    background-color: #111;
+    color: #fff;
+
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.contact__btn:hover {
+    background-color: #000;
+}
+
+.contact__info {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact__card {
+    padding: 1.75rem;
+    background-color: #fff;
+
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+}
+
+.contact__card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 0.25rem;
+}
+
+.contact__card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+@media (max-width: 900px) {
+    .contact__container {
+        grid-template-columns: 1fr;
+    }
+}

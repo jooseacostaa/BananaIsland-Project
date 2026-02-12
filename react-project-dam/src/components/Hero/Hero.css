@@ -1,0 +1,135 @@
+.hero {
+    width: 100%;
+}
+
+.hero__image-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.hero__logo {
+    position: relative;
+    top: -4rem;
+    width: 50rem;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+    transition: transform 0.3s ease;
+}
+
+.hero__logo:hover {
+    transform: scale(1.05);
+}
+
+.hero__content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.hero__content {
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+}
+
+.hero__content p {
+    font-size: 1.1rem;
+    color: #444;
+    padding-bottom: 10rem;
+}
+
+.hero__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    padding-bottom: 12rem;
+}
+
+.hero__card {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 18px;
+    overflow: hidden;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.hero__card-image {
+    width: 100%;
+    height: 50vh;
+    min-height: 220px;
+    overflow: hidden;
+}
+
+.hero__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero__card-content {
+    padding: 1.5rem 1.75rem;
+}
+
+.hero__card-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+.hero__card-content p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.hero__card {
+    position: relative;
+}
+
+.hero__card:nth-child(even) {
+    transform: translateY(14rem);
+}
+
+.hero__card:nth-child(even):hover {
+    transform: translateY(12.5rem);
+}
+
+@media (max-width: 900px) {
+
+    .hero__card:nth-child(even),
+    .hero__card:nth-child(even):hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__card-image {
+        height: 35vh;
+    }
+
+    .hero__content h1 {
+        font-size: 2rem;
+    }
+
+}
