@@ -154,6 +154,7 @@ The project follows strict naming conventions:
 **Jose Acosta**
 - GitHub: [@jooseacostaa](https://github.com/jooseacostaa)
 - Email: joseacostanaranjo@hotmail.com
+- Gmail. joseluisacostanaranjo@alumno.ieselrincon.es
 - Location: España
 
 ## 📄 License
