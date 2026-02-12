@@ -1,4 +1,4 @@
-import Header from "../../components/Header/Header";
+import Header from "../../components/header/header";
 import Footer from "../../components/Footer/Footer";
 
 import "leaflet/dist/leaflet.css";

@@ -1,9 +1,9 @@
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Contact from "../../components/Contact/Contact";
-import About from "../../components/About/About";
-import Hero from "../../components/Hero/Hero";
-import ArtSection from "../../components/ArtSection/ArtSection";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+import Contact from "../../components/contact/Contact";
+import About from "../../components/about/About";
+import Hero from "../../components/hero/Hero";
+import ArtSection from "../../components/art-section/art-section";
 
 function Home() {
     return (
@@ -11,7 +11,7 @@ function Home() {
             <Header />
             <main>
                 <Hero />
-                <ArtSection/>
+                <ArtSection />
                 <About />
                 <Contact />
             </main>

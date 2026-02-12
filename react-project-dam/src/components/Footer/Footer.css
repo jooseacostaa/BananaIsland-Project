@@ -50,7 +50,7 @@
 
 .footer__links a {
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #555;
     transition: color 0.2s ease;
 }
@@ -72,7 +72,7 @@
 }
 
 .footer__links a svg {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #555;
     transition: color 0.2s ease;
 }
@@ -90,7 +90,7 @@
 }
 
 .footer__logo img {
-    height: 4rem;
+    height: 5rem;
     width: auto;
     display: block;
     transition: opacity 0.2s ease, transform 0.2s ease;
@@ -98,7 +98,7 @@
 
 .footer__logo:hover img {
     opacity: 0.85;
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 @media (max-width: 900px) {

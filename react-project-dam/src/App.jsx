@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "../src/pages/Home/Home";
-import Projects from "../src/pages/Projects/Projects";
-import TermsPrivacity from "../src/pages/TermsPrivacity/TermsPrivacity";
-import FindMe from "../src/pages/FindMe/FindMe";
+import Home from "./pages/home/Home";
+import Projects from "./pages/projects/Projects";
+import TermsPrivacity from "../src/pages/terms-privacity/TermsPrivacity";
+import FindMe from "../src/pages/find-me/FindMe";
 
 import "./App.css";
 

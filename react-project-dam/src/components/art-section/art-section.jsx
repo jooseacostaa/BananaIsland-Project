@@ -1,4 +1,4 @@
-import "./ArtSection.css";
+import "./art-section.css";
 
 import cardArtImg1 from "../../assets/art-section-images/artSection1.png";
 import cardArtImg2 from "../../assets/art-section-images/artSection2.png";

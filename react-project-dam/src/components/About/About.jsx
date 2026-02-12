@@ -1,4 +1,4 @@
-import "./About.css";
+import "./about.css";
 
 import imgPerfil from "../../assets/images/perfilimg.png";
 
