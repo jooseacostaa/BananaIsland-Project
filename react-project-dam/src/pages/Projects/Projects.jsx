@@ -1,4 +1,4 @@
-import Header from "../../components/Header/Header";
+import Header from "../../components/header/header";
 import Footer from "../../components/Footer/Footer";
 
 import "./Projects.css";
@@ -21,7 +21,7 @@ const projects = [
         description:
             "Proyecto actual, hecho con React + Vite, todavía en desarrollo",
         image: projectImg2,
-        link: "#",
+        link: "https://github.com/jooseacostaa/BananaIsland-Project",
     },
     {
         id: 3,

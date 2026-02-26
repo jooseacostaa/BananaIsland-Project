@@ -1,0 +1,103 @@
+.foro-header {
+    max-width: 1400px;
+    margin: 4rem auto 2rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.foro-header h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 0.5rem;
+}
+
+.foro-header p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.foro-filtro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.foro-filtro label {
+    font-size: 1rem;
+    color: #444;
+}
+
+.foro-filtro select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.foro-filtro select:hover {
+    border-color: #ccc;
+}
+
+.foro-container {
+    max-width: 1200px;
+    margin: 0 auto 6rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.foro-empty {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #777;
+    grid-column: 1 / -1;
+}
+
+.post-card {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.post-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+.post-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .foro-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .foro-filtro {
+        gap: 0.25rem;
+    }
+
+    .foro-container {
+        grid-template-columns: 1fr;
+    }
+}
