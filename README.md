@@ -157,7 +157,7 @@ The project follows strict naming conventions:
 - Gmail: joseluisacostanaranjo@alumno.ieselrincon.es
 - Location: Spain
 
-- ## 👨‍💻 Inspired by: 
+- ## 🎨 Inspired by: 
 
 **Figma Links**
 - Templates: (https://www.figma.com/templates/web-design-inspiration/)
