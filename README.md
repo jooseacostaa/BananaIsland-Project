@@ -157,6 +157,13 @@ The project follows strict naming conventions:
 - Gmail: joseluisacostanaranjo@alumno.ieselrincon.es
 - Location: Spain
 
+- ## 👨‍💻 Inspired by: 
+
+**Figma Links**
+- Templates: (https://www.figma.com/templates/web-design-inspiration/)
+- Headers: (https://www.figma.com/es-es/comunidad/file/1035612749244820645/101-free-website-headers-for-web-design-v1-2)
+- Footers: (https://www.figma.com/es-es/comunidad/file/1039891579971734186/70-free-footer-for-web-design-components)
+
 ## 📄 License
 
 This project was created for educational purposes as part of the Multiplatform Application Development (DAM) program.
