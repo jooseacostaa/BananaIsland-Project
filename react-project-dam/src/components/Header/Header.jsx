@@ -31,6 +31,7 @@ const Header = () => {
                 <Link to="/projects">Proyectos</Link>
                 <Link to="/findme">Encuéntrame</Link>
                 <Link to="/foro">Foro</Link>
+                <Link to="/rss">Noticias</Link>
                 <Link to="/termsprivacity">Términos y Condiciones</Link>
 
                 <a href="#about">Sobre mí</a>

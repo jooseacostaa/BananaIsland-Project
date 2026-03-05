@@ -1,0 +1,25 @@
+.rss-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.rss-card__title {
+    margin-bottom: 0.5rem;
+}
+
+.rss-card__description {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.rss-card__link {
+    display: inline-block;
+    margin-top: 1rem;
+
+    text-decoration: none;
+    font-weight: 500;
+}
