@@ -151,8 +151,9 @@ The project follows strict naming conventions:
 
 - ## Live Project 🌐
 
-Check out the live project hosted on Firebase Hosting:  
-[🌟 Banana Island Gallery](https://banana-island-5157d.web.app)
+- Check out the live project hosted on Firebase Hosting:  
+
+- Firebase: [BananaIsland](https://banana-island-5157d.web.app)
 
 - ## 👨‍💻 Author
 
