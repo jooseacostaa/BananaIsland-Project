@@ -26,17 +26,11 @@ const Header = () => {
             <nav className={`header__nav ${menuOpen ? "active" : ""}`}>
                 <Link to="/home">Banana Island</Link>
 
-                <a href="#gallery">Gallery</a>
-
                 <Link to="/projects">Proyectos</Link>
                 <Link to="/findme">Encuéntrame</Link>
                 <Link to="/gallery-manager">Galería gestionable</Link>
                 <Link to="/foro">Foro</Link>
                 <Link to="/news">Noticias</Link>
-                <Link to="/termsprivacity">Términos y Condiciones</Link>
-
-                <a href="#about">Sobre mí</a>
-                <a href="#contact">Contacto</a>
             </nav>
         </header>
     );
