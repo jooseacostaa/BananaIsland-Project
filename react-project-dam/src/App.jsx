@@ -5,7 +5,8 @@ import Projects from "./pages/projects/Projects";
 import TermsPrivacity from "../src/pages/terms-privacity/TermsPrivacity";
 import FindMe from "../src/pages/find-me/FindMe";
 import Foro from "./pages/foro-page/Foro";
-import RssPage from "./pages/rss/RssPage";
+import GalleryManager from "./pages/gallery-manager/GalleryManager";
+import NewsPage from "./pages/news-page/NewsPage";
 
 import "./App.css";
 
@@ -18,8 +19,9 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/termsprivacity" element={<TermsPrivacity />} />
         <Route path="/foro" element={<Foro />} />
+        <Route path="/news" element={<NewsPage />} />
         <Route path="/findme" element={<FindMe />} />
-        <Route path="/rss" element={<RssPage />} />
+        <Route path="/gallery-manager" element={<GalleryManager />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>

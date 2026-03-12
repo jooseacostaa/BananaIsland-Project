@@ -1,0 +1,144 @@
+.gallery-manager {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gallery-manager h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.gallery-form {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.gallery-form input {
+    flex: 1 1 200px;
+    padding: 0.6rem 0.8rem;
+
+    border-radius: 8px;
+    border: 1px solid #ddd;
+
+    font-size: 0.9rem;
+}
+
+.gallery-form button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+
+    background: #111;
+    color: white;
+
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.gallery-form button:hover {
+    background: #333;
+}
+
+.gallery-search {
+    margin-bottom: 2rem;
+}
+
+.gallery-search input {
+    width: 100%;
+    max-width: 300px;
+
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-card {
+    background: white;
+    padding: 1.2rem;
+
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-card h3 {
+    margin-bottom: 0.3rem;
+}
+
+.gallery-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.gallery-card-actions {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.gallery-card-actions button {
+    flex: 1;
+
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    border: none;
+
+    cursor: pointer;
+    font-size: 0.85rem;
+
+    transition: opacity 0.2s ease;
+}
+
+.gallery-edit {
+    background: #444;
+    color: white;
+}
+
+.gallery-delete {
+    background: #e54848;
+    color: white;
+}
+
+.gallery-card-actions button:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+
+    .gallery-form {
+        flex-direction: column;
+    }
+
+    .gallery-form input {
+        width: 100%;
+    }
+
+    .gallery-search input {
+        max-width: 100%;
+    }
+
+}
