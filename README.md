@@ -149,6 +149,12 @@ The project follows strict naming conventions:
 - **GitHub Repository**: [https://github.com/jooseacostaa](https://github.com/jooseacostaa)
 - **A2 Bikes Project**: [Website-A2Bikes-Project](https://github.com/jooseacostaa/Website-A2Bikes-Project)
 
+- ## Live Project 🌐
+
+- Check out the live project hosted on Firebase Hosting:  
+
+- Firebase: [BananaIsland](https://banana-island-5157d.web.app)
+
 - ## 👨‍💻 Author
 
 **Jose Acosta**
