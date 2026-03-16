@@ -27,26 +27,12 @@ const GalleryManager = () => {
 
     const [editingId, setEditingId] = useState(null);
 
-    const [news, setNews] = useState(() => {
-        const savedNews = localStorage.getItem("news");
-        return savedNews ? JSON.parse(savedNews) : [];
-    });
 
-    const addNews = (title, description) => {
-
-        const newNews = {
-            id: Date.now(),
-            title,
-            description,
-            date: new Date().toLocaleDateString()
-        };
-
-        const updatedNews = [newNews, ...news];
-
-        setNews(updatedNews);
-
-        localStorage.setItem("news", JSON.stringify(updatedNews));
+    const saveArtworks = (data) => {
+        setArtworks(data);
+        localStorage.setItem("artworks", JSON.stringify(data));
     };
+
 
     const handleChange = (e) => {
         setFormData({
@@ -55,43 +41,27 @@ const GalleryManager = () => {
         });
     };
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (editingId !== null) {
 
-            const updatedArtworks = artworks.map((art) =>
-                art.id === editingId
-                    ? { ...formData, id: Number(editingId) }
-                    : art
+            const updated = artworks.map((art) =>
+                art.id === editingId ? { ...formData, id: editingId } : art
             );
 
-            setArtworks(updatedArtworks);
-
-            localStorage.setItem("artworks", JSON.stringify(updatedArtworks));
-
-            addNews(
-                "Obra actualizada",
-                `La obra "${formData.title}" ha sido actualizada`
-            );
-
+            saveArtworks(updated);
             setEditingId(null);
 
         } else {
 
-            const updatedArtworks = [
-                ...artworks,
-                { ...formData, id: Number(formData.id) }
-            ];
+            const newArtwork = {
+                ...formData,
+                id: Number(formData.id)
+            };
 
-            setArtworks(updatedArtworks);
-
-            localStorage.setItem("artworks", JSON.stringify(updatedArtworks));
-
-            addNews(
-                "Nueva obra añadida",
-                `Se ha añadido "${formData.title}" de ${formData.artist} a la galería`
-            );
+            saveArtworks([...artworks, newArtwork]);
         }
 
         setFormData({
@@ -102,35 +72,23 @@ const GalleryManager = () => {
         });
     };
 
+
     const deleteArtwork = (id) => {
-
-        const updatedArtworks = artworks.filter((art) => art.id !== id);
-
-        setArtworks(updatedArtworks);
-
-        localStorage.setItem("artworks", JSON.stringify(updatedArtworks));
-
-        addNews(
-            "Obra eliminada",
-            "Se ha eliminado una obra de la galería"
-        );
+        const updated = artworks.filter((art) => art.id !== id);
+        saveArtworks(updated);
     };
+
 
     const editArtwork = (art) => {
-
-        setFormData({
-            id: art.id,
-            title: art.title,
-            artist: art.artist,
-            category: art.category
-        });
-
+        setFormData(art);
         setEditingId(art.id);
     };
+
 
     const filteredArtworks = artworks.filter((art) =>
         art.category.toLowerCase().includes(searchCategory.toLowerCase())
     );
+
 
     return (
         <>
@@ -181,15 +139,17 @@ const GalleryManager = () => {
 
                 </form>
 
+
                 <div className="gallery-search">
 
                     <input
-                        placeholder="Buscar por categoría (ej: cubismo)"
+                        placeholder="Buscar por categoría..."
                         value={searchCategory}
                         onChange={(e) => setSearchCategory(e.target.value)}
                     />
 
                 </div>
+
 
                 <div className="gallery-grid">
 
