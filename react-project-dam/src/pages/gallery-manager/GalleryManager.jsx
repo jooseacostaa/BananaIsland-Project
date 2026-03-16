@@ -11,18 +11,12 @@ const initialArtworks = [
 
 const GalleryManager = () => {
 
-    // OBRAS
-
     const [artworks, setArtworks] = useState(() => {
         const saved = localStorage.getItem("artworks");
         return saved ? JSON.parse(saved) : initialArtworks;
     });
 
-    // BUSCADOR
-
     const [searchCategory, setSearchCategory] = useState("");
-
-    // FORMULARIO
 
     const [formData, setFormData] = useState({
         id: "",
@@ -32,8 +26,6 @@ const GalleryManager = () => {
     });
 
     const [editingId, setEditingId] = useState(null);
-
-    // NOTICIAS
 
     const [news, setNews] = useState(() => {
         const savedNews = localStorage.getItem("news");
@@ -56,16 +48,12 @@ const GalleryManager = () => {
         localStorage.setItem("news", JSON.stringify(updatedNews));
     };
 
-    // INPUTS
-
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
     };
-
-    // SUBMIT
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -114,8 +102,6 @@ const GalleryManager = () => {
         });
     };
 
-    // BORRAR
-
     const deleteArtwork = (id) => {
 
         const updatedArtworks = artworks.filter((art) => art.id !== id);
@@ -130,8 +116,6 @@ const GalleryManager = () => {
         );
     };
 
-    // EDITAR
-
     const editArtwork = (art) => {
 
         setFormData({
@@ -144,8 +128,6 @@ const GalleryManager = () => {
         setEditingId(art.id);
     };
 
-    // FILTRADO
-
     const filteredArtworks = artworks.filter((art) =>
         art.category.toLowerCase().includes(searchCategory.toLowerCase())
     );
@@ -157,8 +139,6 @@ const GalleryManager = () => {
             <main className="gallery-manager">
 
                 <h1>Galería gestionable</h1>
-
-                {/* FORMULARIO */}
 
                 <form className="gallery-form" onSubmit={handleSubmit}>
 
@@ -201,8 +181,6 @@ const GalleryManager = () => {
 
                 </form>
 
-                {/* BUSCADOR */}
-
                 <div className="gallery-search">
 
                     <input
@@ -212,8 +190,6 @@ const GalleryManager = () => {
                     />
 
                 </div>
-
-                {/* GRID DE OBRAS */}
 
                 <div className="gallery-grid">
 

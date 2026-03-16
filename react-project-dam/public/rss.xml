@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+
+        <title>Banana Island Art News</title>
+        <link>http://localhost:5173</link>
+        <description>Latest updates from the Banana Island art gallery</description>
+
+        <item>
+            <title>Nueva pintura añadida a la Galería Gestionable</title>
+            <link>http://localhost:5173/gallery-manager</link>
+            <description>Se añadió una nueva pintura.</description>
+            <pubDate>Lunes, 16 Marzo 2026</pubDate>
+        </item>
+
+        <item>
+            <title>Nueva exibición de arte anunciada</title>
+            <link>http://localhost:5173/projects</link>
+            <description>Descrube los nuevos cuadros que se añadiráne en la gelería digital</description>
+            <pubDate>Domingo, 15 Mar 2026</pubDate>
+        </item>
+
+    </channel>
+</rss>

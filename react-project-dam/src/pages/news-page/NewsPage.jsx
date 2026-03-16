@@ -5,14 +5,37 @@ import "./NewsPage.css";
 
 const NewsPage = () => {
 
-    const [news, setNews] = useState([]);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        const savedNews = localStorage.getItem("news");
 
-        if (savedNews) {
-            setNews(JSON.parse(savedNews));
-        }
+        const loadRSS = async () => {
+
+            try {
+
+                const response = await fetch("/rss.xml");
+                const text = await response.text();
+
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(text, "text/xml");
+
+                const items = Array.from(xml.querySelectorAll("item")).map(item => ({
+                    title: item.querySelector("title")?.textContent,
+                    description: item.querySelector("description")?.textContent,
+                    link: item.querySelector("link")?.textContent,
+                    pubDate: item.querySelector("pubDate")?.textContent
+                }));
+
+                setPosts(items);
+
+            } catch (error) {
+                console.error("Error loading RSS:", error);
+            }
+
+        };
+
+        loadRSS();
+
     }, []);
 
     return (
@@ -21,23 +44,29 @@ const NewsPage = () => {
 
             <main className="news-page">
 
-                <h1>Noticias de Banana Island</h1>
+                <h1>Art News</h1>
+
+                <div className="rss-button-container">
+                    <a href="/rss.xml" target="_blank" className="rss-button">
+                        Ver el RSS Feed (XML)
+                    </a>
+                </div>
 
                 <div className="news-grid">
 
-                    {news.length === 0 && (
-                        <p>No hay noticias todavía.</p>
-                    )}
+                    {posts.map((post, index) => (
 
-                    {news.map((item) => (
+                        <div key={index} className="news-card">
 
-                        <div key={item.id} className="news-card">
+                            <h3>{post.title}</h3>
 
-                            <h3>{item.title}</h3>
+                            <p>{post.description}</p>
 
-                            <p>{item.description}</p>
+                            <span className="news-date">{post.pubDate}</span>
 
-                            <span>{item.date}</span>
+                            <a href={post.link} target="_blank" rel="noreferrer">
+                                Read more
+                            </a>
 
                         </div>
 

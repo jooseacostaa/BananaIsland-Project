@@ -31,7 +31,7 @@ const Footer = () => {
                     <div>
                         <span>Recursos</span>
                         <a href="#">Documentación</a>
-                        <a href="#">Blog</a>
+                        <a href="/rss.xml" target="_blank">RSS Feed</a>
                         <a href="#">Soporte</a>
                     </div>
 

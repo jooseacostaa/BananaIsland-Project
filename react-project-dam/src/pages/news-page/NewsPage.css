@@ -5,8 +5,8 @@
 }
 
 .news-page h1 {
-    margin-bottom: 2rem;
     font-size: 2rem;
+    margin-bottom: 2rem;
     color: #222;
 }
 
@@ -19,19 +19,19 @@
 .news-card {
     background: #ffffff;
     padding: 1.5rem;
-    border-radius: 14px;
+    border-radius: 16px;
     border: 1px solid #eee;
 
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.8rem;
 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .news-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .news-card h3 {
@@ -42,9 +42,54 @@
 .news-card p {
     font-size: 0.9rem;
     color: #555;
+    line-height: 1.4;
 }
 
-.news-card span {
+.news-card a {
+    margin-top: auto;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #000;
+    transition: color 0.2s ease;
+}
+
+.news-card a:hover {
+    color: #555;
+}
+
+.rss-button-container {
+    margin-bottom: 2rem;
+}
+
+.rss-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.rss-button:hover {
+    background: #333;
+}
+
+.news-date {
     font-size: 0.8rem;
-    color: #888;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+
+    .news-page {
+        padding: 1.5rem;
+    }
+
+    .news-page h1 {
+        font-size: 1.6rem;
+    }
+
 }
