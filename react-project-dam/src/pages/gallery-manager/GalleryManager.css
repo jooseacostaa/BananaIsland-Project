@@ -9,6 +9,32 @@
     text-align: center;
 }
 
+.gallery-actions {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.gallery-actions button {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #111;
+    color: white;
+}
+
+.gallery-file-input {
+    display: none;
+}
+
+.gallery-status {
+    margin-bottom: 1rem;
+    color: #b00020;
+    font-weight: 600;
+}
+
 .gallery-form {
     background: #ffffff;
     padding: 1.5rem;
