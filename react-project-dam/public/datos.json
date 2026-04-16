@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "La noche estrellada",
+        "artist": "Van Gogh",
+        "category": "Postimpresionismo"
+    },
+    {
+        "id": 2,
+        "title": "Guernica",
+        "artist": "Picasso",
+        "category": "Cubismo"
+    }
+]

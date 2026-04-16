@@ -58,6 +58,56 @@ This project was designed following modern UX/UI principles, inspired by contemp
 - Media queries for mobile, tablet, and desktop  
 - Adaptive layouts across all components  
 
+### 7. 📂 Data Import and Export
+
+The app allows you to import and export data in the following formats:
+
+- CSV
+- JSON
+- XML
+
+The data is stored in Firebase Firestore and managed from the Gallery Manager page.
+
+### 🔽 Data Import
+
+Users can upload files in `.csv`, `.json`, or `.xml` format.
+
+Process:
+1. Select the file from the interface.
+2. Read the content.
+3. Convert to JavaScript objects.
+4. Validate data.
+5. Store in Firebase Firestore.
+
+This allows for the automatic loading of large volumes of data.
+
+### 🔼 Data Export
+
+Data stored in Firebase can be exported in the following formats:
+
+- CSV (`data.csv`)
+- JSON (`data.json`)
+- XML (`data.xml`)
+
+The export is based on the current data in the database.
+
+### 📎 Sample Files
+
+You can test the import with these files:
+
+- [data.csv](./public/data.csv)
+- [data.json](./public/data.json)
+- [data.xml](./public/data.xml)
+
+### 🧩 Service Architecture
+
+Access to Firebase is centralized in the `services/` folder.
+
+- `firebase.js`: Firebase configuration
+- `artworksService.js`: Firestore access functions
+
+This allows you to separate data logic from React components.
+
 ## 🛠️ Installation and Setup
 
 ### Prerequisites

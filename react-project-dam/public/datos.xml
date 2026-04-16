@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<artworks>
+    <artwork>
+        <id>1</id>
+        <title>La noche estrellada</title>
+        <artist>Van Gogh</artist>
+        <category>Postimpresionismo</category>
+    </artwork>
+    <artwork>
+        <id>2</id>
+        <title>Guernica</title>
+        <artist>Picasso</artist>
+        <category>Cubismo</category>
+    </artwork>
+</artworks>
