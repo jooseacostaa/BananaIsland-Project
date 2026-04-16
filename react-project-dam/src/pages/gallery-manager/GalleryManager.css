@@ -23,6 +23,12 @@
     cursor: pointer;
     background: #111;
     color: white;
+    transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.gallery-actions button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
 }
 
 .gallery-file-input {

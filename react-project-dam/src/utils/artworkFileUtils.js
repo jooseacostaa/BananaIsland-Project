@@ -179,3 +179,40 @@ export const downloadTextFile = (content, fileName, mimeType) => {
 
     URL.revokeObjectURL(url);
 };
+
+import * as XLSX from "xlsx";
+
+export const artworksToXLSX = (artworks) => {
+    const worksheet = XLSX.utils.json_to_sheet(artworks);
+    const workbook = XLSX.utils.book_new();
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Artworks");
+
+    XLSX.writeFile(workbook, "datos.xlsx");
+};
+
+export const xlsxToArtworks = (file) => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+            try {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, { type: "array" });
+
+                const sheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[sheetName];
+
+                const jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+                resolve(jsonData);
+            } catch (error) {
+                reject(new Error("Error leyendo archivo Excel"));
+            }
+        };
+
+        reader.onerror = () => reject(new Error("Error leyendo archivo"));
+
+        reader.readAsArrayBuffer(file);
+    });
+};

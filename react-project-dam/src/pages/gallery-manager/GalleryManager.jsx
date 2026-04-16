@@ -7,6 +7,7 @@ import {
     replaceAllArtworks,
     saveArtwork,
 } from "../../services/firebase/artworksService";
+
 import {
     artworksToCSV,
     artworksToJSON,
@@ -15,7 +16,10 @@ import {
     downloadTextFile,
     jsonToArtworks,
     xmlToArtworks,
+    xlsxToArtworks,
+    artworksToXLSX,
 } from "../../utils/artworkFileUtils";
+
 import "./GalleryManager.css";
 
 const initialArtworks = [
@@ -139,17 +143,20 @@ const GalleryManager = () => {
         try {
             setStatus("");
 
-            const text = await file.text();
             const extension = file.name.split(".").pop()?.toLowerCase();
-
             let importedArtworks = [];
 
             if (extension === "csv") {
+                const text = await file.text();
                 importedArtworks = csvToArtworks(text);
             } else if (extension === "json") {
+                const text = await file.text();
                 importedArtworks = jsonToArtworks(text);
             } else if (extension === "xml") {
+                const text = await file.text();
                 importedArtworks = xmlToArtworks(text);
+            } else if (extension === "xlsx") {
+                importedArtworks = await xlsxToArtworks(file);
             } else {
                 throw new Error("Formato no soportado");
             }
@@ -190,6 +197,11 @@ const GalleryManager = () => {
             if (format === "xml") {
                 downloadTextFile(artworksToXML(currentArtworks), "datos.xml", "application/xml;charset=utf-8");
             }
+
+            if (format === "xlsx") {
+                artworksToXLSX(currentArtworks);
+            }
+
         } catch (error) {
             setStatus(error.message || "Error exportando los datos");
         }
@@ -203,38 +215,10 @@ const GalleryManager = () => {
                 <h1>Galería gestionable</h1>
 
                 <form className="gallery-form" onSubmit={handleSubmit}>
-                    <input
-                        name="id"
-                        placeholder="ID"
-                        value={formData.id}
-                        onChange={handleChange}
-                        required
-                        disabled={editingId !== null}
-                    />
-
-                    <input
-                        name="title"
-                        placeholder="Título"
-                        value={formData.title}
-                        onChange={handleChange}
-                        required
-                    />
-
-                    <input
-                        name="artist"
-                        placeholder="Artista"
-                        value={formData.artist}
-                        onChange={handleChange}
-                        required
-                    />
-
-                    <input
-                        name="category"
-                        placeholder="Categoría"
-                        value={formData.category}
-                        onChange={handleChange}
-                        required
-                    />
+                    <input name="id" placeholder="ID" value={formData.id} onChange={handleChange} required disabled={editingId !== null} />
+                    <input name="title" placeholder="Título" value={formData.title} onChange={handleChange} required />
+                    <input name="artist" placeholder="Artista" value={formData.artist} onChange={handleChange} required />
+                    <input name="category" placeholder="Categoría" value={formData.category} onChange={handleChange} required />
 
                     <button type="submit">
                         {editingId ? "Actualizar obra" : "Añadir obra"}
@@ -245,7 +229,7 @@ const GalleryManager = () => {
                     <input
                         ref={fileInputRef}
                         type="file"
-                        accept=".csv,.json,.xml"
+                        accept=".csv,.json,.xml,.xlsx"
                         onChange={handleFileImport}
                         className="gallery-file-input"
                     />
@@ -254,17 +238,10 @@ const GalleryManager = () => {
                         Importar archivo
                     </button>
 
-                    <button type="button" onClick={() => handleExport("csv")}>
-                        Exportar CSV
-                    </button>
-
-                    <button type="button" onClick={() => handleExport("json")}>
-                        Exportar JSON
-                    </button>
-
-                    <button type="button" onClick={() => handleExport("xml")}>
-                        Exportar XML
-                    </button>
+                    <button onClick={() => handleExport("csv")}>CSV</button>
+                    <button onClick={() => handleExport("json")}>JSON</button>
+                    <button onClick={() => handleExport("xml")}>XML</button>
+                    <button onClick={() => handleExport("xlsx")}>Excel</button>
                 </div>
 
                 <div className="gallery-search">
@@ -288,21 +265,8 @@ const GalleryManager = () => {
                                 <p><strong>Categoría:</strong> {art.category}</p>
 
                                 <div className="gallery-card-actions">
-                                    <button
-                                        type="button"
-                                        className="gallery-edit"
-                                        onClick={() => editArtwork(art)}
-                                    >
-                                        Editar
-                                    </button>
-
-                                    <button
-                                        type="button"
-                                        className="gallery-delete"
-                                        onClick={() => deleteArtwork(art.id)}
-                                    >
-                                        Borrar
-                                    </button>
+                                    <button onClick={() => editArtwork(art)}>Editar</button>
+                                    <button onClick={() => deleteArtwork(art.id)}>Borrar</button>
                                 </div>
                             </div>
                         ))}
